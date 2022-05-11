@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  
+  let navigate = useNavigate();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="w-screen h-screen bg-slate-300">
+      <Header />
+      <div className="centered-container flex flex-row gap-28">
+        <button
+          onClick={() => {
+            navigate('/randevu-al');
+          }}
+          className="tracking-wide"
         >
-          Learn React
-        </a>
-      </header>
+          Randevu Al
+        </button>
+        <button
+          className="tracking-wide"
+          onClick={() => {
+            navigate('/randevu-liste');
+          }}
+        >
+          Randevuları Listele
+        </button>
+      </div>
     </div>
   );
 }
